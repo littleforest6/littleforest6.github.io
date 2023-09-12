@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Forest's blog</title><meta name="author" content="Forest"><meta name="copyright" content="Forest"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Forest&#39;s blog">
+<meta property="og:url" content="http://littleforest6.github.io/index.html">
+<meta property="og:site_name" content="Forest&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://littleforest6.github.io/img/headpicture.jpg">
+<meta property="article:author" content="Forest">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://littleforest6.github.io/img/headpicture.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://littleforest6.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Forest\'s blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-12 18:11:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/headpicture.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/top.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Forest's blog"><img class="site-icon" src="https://pic3.zhimg.com/v2-13d1c3b687114c94df0c41ed9301fce6_r.jpg"/><span class="site-name">Forest's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Forest's blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/littleforest6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1193497806@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/luckForest" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #87cefa;"></i></a><a class="social-icon" href="https://space.bilibili.com/516132720" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #ffb6c1;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/12/OpenGl%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9C%A8VS2022%E4%B8%8B%E4%BD%BF%E7%94%A8GLFW%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E9%85%8D%E7%BD%AE/" title="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-abdae3ea8ab3c944982ace2d9b32ae10_720w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/12/OpenGl%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9C%A8VS2022%E4%B8%8B%E4%BD%BF%E7%94%A8GLFW%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E9%85%8D%E7%BD%AE/" title="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置">OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-12T05:44:25.000Z" title="发表于 2023-09-12 13:44:25">2023-09-12</time></span></div><div class="content">关于OpenGL在Visual Studio里的配置方法
+1.分别搜索glfw和glew（建议使用bing来搜索），分别下载Source package和Binaries Windows  64bit（32bit）
+2.下载Cmake，详情见：Windows下CMake的下载与安装详解_cmake下载_wendy_ya的博客-CSDN博客
+3.压缩glfw的压缩包，并进入如图所示的文件夹，这里可以看到如下图的文件
+
+4.打开命令行窗口，使用cd命令进入包含CMakeLists文件的文件夹，并输入cmake . 然后回车。这里要注意不要少了空格和”.”
+1cmake . 
+
+等运行结束，可以看到包含CMakeLists文件的文件夹里多了很多文件
+5.找到其中glfw的sln文件并打开，进入visual studio，这时候可以看到所有的项目和解决方案。这里我们只需要在Debug设置下的生成解决方案即可。需要注意的是默认的项目是x64的，也就是64位的，这里统一生成64位的库。如果需要Release版本的库也可以设置并生成
+
+生成解决方案后，我们可以在src文件夹中看到生成的Debug和R ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/08/01/TCPIP%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE%E5%92%8C%E5%8E%9F%E7%90%86/" title="TCP/IP协议以及互联网常见协议和原理"><img class="post-bg" src="https://raw.githubusercontent.com/littleforest6/picture/master/9481f2937e2dae2262ed409b0ef51c3c.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TCP/IP协议以及互联网常见协议和原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/08/01/TCPIP%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE%E5%92%8C%E5%8E%9F%E7%90%86/" title="TCP/IP协议以及互联网常见协议和原理">TCP/IP协议以及互联网常见协议和原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-01T04:05:55.000Z" title="发表于 2023-08-01 12:05:55">2023-08-01</time></span></div><div class="content">TCP/IP协议以及互联网常见协议和原理
+TCP/IP协议，英文全称Transmission Control Protocol(协议)/Internet Protocol，包含了一系列构成互联网基础的网络协议，是Internet的核心协议。TCP/IP协议是一个协议簇，包含了应用协议、传输协议、网际互联协议和路由控制协议。
+OSI七层模型和TCP/IP协议：
+
+TCP/IP协议族
+
+应用协议：TCP/IP体系中的应用层**协议，主要包括HTTP（超文本传输协议）、SMTP（简单邮件传送协议）、FTP（文件传输协议）、TELNET（远程登录协议）、SNMP（简单网络管理协议）。
+传输协议：TCP/IP体系中的传输层**协议，主要包括TCP（传输控制协议）、UDP（用户数据报协议）。
+网际互联协议：TCP/IP体系中的网络层**协议，主要包括IP（Internet协议）、ARP（地址解析协议）、RARP（逆地址解析协议）、ICMP（因特网控制报文协议）、IGMP（因特网组管理协议）。
+路由控制协议：TCP/IP体系中的链路层**协议，分为内部网关协议和域间路由协议。内部网关协议包括RIP（ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/22/%E8%B6%85%E5%B9%B3%E9%9D%A2%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88SVM%EF%BC%89/" title="超平面与支持向量机（SVM）"><img class="post-bg" src="https://pic1.zhimg.com/v2-197913c461c1953c30b804b4a7eddfcc_r.webp?source=172ae18b&amp;consumer=ZHI_MENG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="超平面与支持向量机（SVM）"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/22/%E8%B6%85%E5%B9%B3%E9%9D%A2%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88SVM%EF%BC%89/" title="超平面与支持向量机（SVM）">超平面与支持向量机（SVM）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-22T14:47:44.000Z" title="发表于 2023-07-22 22:47:44">2023-07-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">超平面
+
+超平面是什么
+维基百科的定义：
+
+In geometry a hyperplane is a subspace of one dimension less than its ambient space.
+
+翻译后为：在几何中，超平面指的是比所处空间少一个维度的子空间。
+为了更好的解释这个问题，我们都知道对于一条直线，在这个直线上的任意一个点都可以把这个直线分为两半，同理，对于一个平面，一条线也可以将这个平面分成两半，对于一个正方体，我们也能找到一个平面将正方体切成两半。
+那么以此类推N-1维的子空间可以将N维空间切成两半，那么这个N-1维的子空间我们就成为N维空间的超平面。
+超平面的公式
+对于一个n维空间，超平面应该如何表示？
+设x0为超平面上的点，ω为超平面的法向量。对于超平面上任何一点x，有：
+
+令：
+
+则有：
+
+这就是超平面的公式。
+支持向量机SVM
+
+SVM简介
+支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器，间隔最大使它有别于感知机；SVM还包括核技巧，这使它成为实质上的非 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/07/20/%E6%B6%89%E5%AF%86%E4%BF%A1%E6%81%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95/" title="涉密信息文本检查方法"><img class="post-bg" src="https://picx.zhimg.com/v2-87c1f43319153da40cc5209d2201441b_r.jpg?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="涉密信息文本检查方法"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/20/%E6%B6%89%E5%AF%86%E4%BF%A1%E6%81%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95/" title="涉密信息文本检查方法">涉密信息文本检查方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-20T06:24:18.000Z" title="发表于 2023-07-20 14:24:18">2023-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">信息安全</a></span></div><div class="content">前言
+对于涉密信息，我们最重要的信息无非姓名，手机号码，身份证号码，在日常生活中很多东西包括机票、手机截图，随拍等等都可能会将一些有效的涉密信息涉及进去，在手机内部或者云端存储很容易被恶意软件或者其他不安全的行为进行截取从而获得个人隐私信息，例如电话号码如果泄露会经常接到骚扰电话或者垃圾短信。
+C++代码
+下面这段代码的作用比较简单，通过给出的文本信息，通过正则表达式获取里面的中英文人名**（中文名识别有时候不好使是因为使用Unicode必须要在UTF-8下进行）**，11位手机号码以及身份证号。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657##include &lt;iostream&gt;#include &lt;regex&gt;#include &lt;string&gt;// 识别中国手机电话号码void detectChineseMobileNumbers(const std::string&amp; text ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/16/ArrayList%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" title="ArrayList底层机制"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-abdae3ea8ab3c944982ace2d9b32ae10_720w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArrayList底层机制"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/16/ArrayList%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" title="ArrayList底层机制">ArrayList底层机制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-16T07:34:02.000Z" title="发表于 2023-07-16 15:34:02">2023-07-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">简介
+
+ArrayList是基于数组实现的，是一个动态数组，其容量能自动增长，类似于C语言中的动态申请内存，动态增长内存。
+ArrayList不是线程安全的，只能用在单线程环境下，多线程环境下可以考虑用Collections.synchronizedList(List l)函数返回一个线程安全的ArrayList类，也可以使用concurrent并发包下的CopyOnWriteArrayList类。
+ArrayList实现了Serializable接口，因此它支持序列化，能够通过序列化传输，实现了RandomAccess接口，支持快速随机访问，实际上就是通过下标序号进行快速访问，实现了Cloneable接口，能被克隆。
+
+存储结构
+123// 当前数据对象存放地方，当前对象不参与序列化// 这个关键字最主要的作用就是当序列化时，被transient修饰的内容将不会被序列化transient Object[] elementData;
+
+Object类型数组。
+
+数据域
+1234567891011121314151617181920212223  // 序列化ID  private st ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/07/09/StringBuilder%E5%92%8CStringBuffer%E7%9A%84%E5%8C%BA%E5%88%AB/" title="StringBuilder和StringBuffer的区别"><img class="post-bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="StringBuilder和StringBuffer的区别"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/09/StringBuilder%E5%92%8CStringBuffer%E7%9A%84%E5%8C%BA%E5%88%AB/" title="StringBuilder和StringBuffer的区别">StringBuilder和StringBuffer的区别</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-09T13:02:49.000Z" title="发表于 2023-07-09 21:02:49">2023-07-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">对字符串的修改
+String:不可变字符串
+StringBuffer:可变字符串、效率低（速度慢）、但线程安全
+StringBuilder:可变字符序列、效率高（速度快）、线程不安全（不能同步访问）
+继承结构
+
+源码分析
+StringBuffer 的所有公开方法都是由synchronized修饰的，但是StringBuilder没有。（synchronized是Java中的关键字，是一种同步锁）
+StringBuffer:
+123456@Override   public synchronized StringBuffer append(String str) &#123;       toStringCache = null;       super.append(str);       return this;   &#125;
+对于缓冲区：
+StringBuffer:
+123456789private transient char[] toStringCache;@Overridepublic synchronized String toString() &#123;    if ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/06/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95/" title="hexo-GitHub方法搭建个人博客"><img class="post-bg" src="https://s2.loli.net/2023/07/06/8XokGae6Q93gPvZ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo-GitHub方法搭建个人博客"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/06/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95/" title="hexo-GitHub方法搭建个人博客">hexo-GitHub方法搭建个人博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-06T03:16:16.000Z" title="发表于 2023-07-06 11:16:16">2023-07-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">介绍个人博客的搭建方法，简单易操作。</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/07/04/Java%E9%9B%86%E5%90%88%E2%80%94%E2%80%94HashMap/" title="Java集合——HashMap"><img class="post-bg" src="https://www.runoob.com/wp-content/uploads/2020/07/WV9wXLl.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java集合——HashMap"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/04/Java%E9%9B%86%E5%90%88%E2%80%94%E2%80%94HashMap/" title="Java集合——HashMap">Java集合——HashMap</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-04T13:01:42.000Z" title="发表于 2023-07-04 21:01:42">2023-07-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">哈希表，是一种重要的数据结构，应用场景及其丰富，许多缓存技术（如memcached）的核心其实就是维护一张大的哈希表。</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/03/Prim%E7%AE%97%E6%B3%95/" title="Prim算法解析"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-99991e0f48165e901f6fe844087de568_720w.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Prim算法解析"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/03/Prim%E7%AE%97%E6%B3%95/" title="Prim算法解析">Prim算法解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-03T14:42:29.000Z" title="发表于 2023-06-03 22:42:29">2023-06-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a></span></div><div class="content">详细讲述了用Prim算法构建最小代价生成树的过程，给出了参考代码。</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/headpicture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Forest</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/littleforest6"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/littleforest6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1193497806@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/luckForest" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #87cefa;"></i></a><a class="social-icon" href="https://space.bilibili.com/516132720" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #ffb6c1;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my knowledge forest!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/12/OpenGl%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9C%A8VS2022%E4%B8%8B%E4%BD%BF%E7%94%A8GLFW%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E9%85%8D%E7%BD%AE/" title="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置"><img src="https://pic1.zhimg.com/80/v2-abdae3ea8ab3c944982ace2d9b32ae10_720w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置"/></a><div class="content"><a class="title" href="/2023/09/12/OpenGl%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9C%A8VS2022%E4%B8%8B%E4%BD%BF%E7%94%A8GLFW%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E9%85%8D%E7%BD%AE/" title="OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置">OpenGl简介及在VS2022下使用GLFW创建第一个窗口配置</a><time datetime="2023-09-12T05:44:25.000Z" title="发表于 2023-09-12 13:44:25">2023-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/01/TCPIP%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE%E5%92%8C%E5%8E%9F%E7%90%86/" title="TCP/IP协议以及互联网常见协议和原理"><img src="https://raw.githubusercontent.com/littleforest6/picture/master/9481f2937e2dae2262ed409b0ef51c3c.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TCP/IP协议以及互联网常见协议和原理"/></a><div class="content"><a class="title" href="/2023/08/01/TCPIP%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE%E5%92%8C%E5%8E%9F%E7%90%86/" title="TCP/IP协议以及互联网常见协议和原理">TCP/IP协议以及互联网常见协议和原理</a><time datetime="2023-08-01T04:05:55.000Z" title="发表于 2023-08-01 12:05:55">2023-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/22/%E8%B6%85%E5%B9%B3%E9%9D%A2%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88SVM%EF%BC%89/" title="超平面与支持向量机（SVM）"><img src="https://pic1.zhimg.com/v2-197913c461c1953c30b804b4a7eddfcc_r.webp?source=172ae18b&amp;consumer=ZHI_MENG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="超平面与支持向量机（SVM）"/></a><div class="content"><a class="title" href="/2023/07/22/%E8%B6%85%E5%B9%B3%E9%9D%A2%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88SVM%EF%BC%89/" title="超平面与支持向量机（SVM）">超平面与支持向量机（SVM）</a><time datetime="2023-07-22T14:47:44.000Z" title="发表于 2023-07-22 22:47:44">2023-07-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/20/%E6%B6%89%E5%AF%86%E4%BF%A1%E6%81%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95/" title="涉密信息文本检查方法"><img src="https://picx.zhimg.com/v2-87c1f43319153da40cc5209d2201441b_r.jpg?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="涉密信息文本检查方法"/></a><div class="content"><a class="title" href="/2023/07/20/%E6%B6%89%E5%AF%86%E4%BF%A1%E6%81%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95/" title="涉密信息文本检查方法">涉密信息文本检查方法</a><time datetime="2023-07-20T06:24:18.000Z" title="发表于 2023-07-20 14:24:18">2023-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/16/ArrayList%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" title="ArrayList底层机制"><img src="https://pic1.zhimg.com/80/v2-abdae3ea8ab3c944982ace2d9b32ae10_720w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArrayList底层机制"/></a><div class="content"><a class="title" href="/2023/07/16/ArrayList%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" title="ArrayList底层机制">ArrayList底层机制</a><time datetime="2023-07-16T07:34:02.000Z" title="发表于 2023-07-16 15:34:02">2023-07-16</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"><span class="card-category-list-name">信息安全</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">计算机基础</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C++</a> <a href="/tags/Java/" style="font-size: 1.5em; color: #99a9bf">Java</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 1.1em; color: #999">信息安全</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">机器学习</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.1em; color: #999">前端</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-09-12T10:11:33.265Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Forest</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
