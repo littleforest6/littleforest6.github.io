@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Prim算法解析 | Forest's blog</title><meta name="author" content="Forest"><meta name="copyright" content="Forest"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="详细讲述了用Prim算法构建最小代价生成树的过程，给出了参考代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prim算法解析">
+<meta property="og:url" content="http://littleforest6.github.io/2023/06/03/%E7%AE%97%E6%B3%95/Prim%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Forest&#39;s blog">
+<meta property="og:description" content="详细讲述了用Prim算法构建最小代价生成树的过程，给出了参考代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-99991e0f48165e901f6fe844087de568_720w.webp">
+<meta property="article:published_time" content="2023-06-03T14:42:29.000Z">
+<meta property="article:modified_time" content="2023-07-21T11:10:12.000Z">
+<meta property="article:author" content="Forest">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-99991e0f48165e901f6fe844087de568_720w.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://littleforest6.github.io/2023/06/03/%E7%AE%97%E6%B3%95/Prim%E7%AE%97%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Prim算法解析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-21 19:10:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/headpicture.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic1.zhimg.com/80/v2-99991e0f48165e901f6fe844087de568_720w.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="Forest's blog"><img class="site-icon" src="https://pic3.zhimg.com/v2-13d1c3b687114c94df0c41ed9301fce6_r.jpg"/><span class="site-name">Forest's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Prim算法解析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-03T14:42:29.000Z" title="发表于 2023-06-03 22:42:29">2023-06-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-21T11:10:12.000Z" title="更新于 2023-07-21 19:10:12">2023-07-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Prim算法解析"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Prim算法</h1>
+<p>Prim算法的C++语言描述：</p>
+<p>（图的相关算法）</p>
+<p>最小代价生成树：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-2f15b6f1ccd26f034ff640ba10e5ddd6_720w.webp" alt="v2-2f15b6f1ccd26f034ff640ba10e5ddd6_720w.webp (619×258) (zhimg.com)"></p>
+<ol>
+<li>
+<p>建立边set用来存放结果，建立节点set用来存放节点同时用于标记是否被访问过，建立边的最小堆</p>
+</li>
+<li>
+<p>开始遍历所有节点，如果没有访问，则添加到节点set，然后将其相连的边入堆。</p>
+</li>
+<li>
+<p>从堆中取最小的边，然后判断to节点是否被访问过，如果没有，将这个边加入生成树（我们想要的边），并标记该节点访问。</p>
+</li>
+<li>
+<p>然后将to节点所相连的边添加到最小堆中，不然这个网络就不会向外扩展了（这个步骤是必须的）。</p>
+</li>
+<li>
+<p>循环上面的操作，直到所有的节点遍历完。</p>
+<p><img src="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=9588b933b1fd5266a77e34129b28bb13/e1fe9925bc315c6020ebde378ab1cb13485477ef.jpg" alt="e1fe9925bc315c6020ebde378ab1cb13485477ef.jpg (556×379) (baidu.com)"></p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MaxVnum 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 2147483647</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MGraph</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="type">char</span> Vex[MaxVnum];  <span class="comment">//一维数组存储结点信息</span></span><br><span class="line">  <span class="type">int</span> Edge[MaxVnum][MaxVnum]; <span class="comment">//邻接矩阵存储边信息</span></span><br><span class="line">  <span class="type">int</span> vexNum,edgeNum;   <span class="comment">//结点数，边数</span></span><br><span class="line">  <span class="built_in">MGraph</span>(<span class="type">int</span> vexNum, <span class="type">int</span> edgeNum) : <span class="built_in">vexNum</span>(vexNum), <span class="built_in">edgeNum</span>(edgeNum) &#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MiniSpanTree_Prim</span><span class="params">(MGraph* G)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> min, i, j, k;</span><br><span class="line">  <span class="type">int</span> adjvex[MaxVnum];  <span class="comment">//保存顶点下标</span></span><br><span class="line">  <span class="type">int</span> lowcost[MaxVnum];  <span class="comment">//保存顶点间边的权值</span></span><br><span class="line">  lowcost[<span class="number">0</span>] = <span class="number">0</span>;   <span class="comment">//初始化第一个权值为0，即v0加入生成树，lowcost的值为0，在这里就是此下标的顶点已经加入生成树</span></span><br><span class="line">  adjvex[<span class="number">0</span>] = <span class="number">0</span>; <span class="comment">//初始化第一个顶点下标为0</span></span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">1</span>;i&lt;G-&gt;vexNum;i++)&#123;   <span class="comment">//循环 除下标为0外的全部顶点</span></span><br><span class="line">    lowcost[i] = G-&gt;Edge[<span class="number">0</span>][i];    <span class="comment">//将v0顶点与之有边的权值存入数组</span></span><br><span class="line">    adjvex[i] = <span class="number">0</span>; <span class="comment">//初始化都为v0的下标</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;G-&gt;vexNum;i++)&#123;</span><br><span class="line">    min = INF; <span class="comment">//初始化最小权值为无穷大，通常设置为很大的数字</span></span><br><span class="line">    j = <span class="number">1</span>;</span><br><span class="line">    k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;G-&gt;vexNum)&#123;    <span class="comment">//循环全部顶点</span></span><br><span class="line">      <span class="keyword">if</span>(lowcost[j] != <span class="number">0</span> &amp;&amp; lowcost[j] &lt; min)&#123;  <span class="comment">//如果权值不为0且权值小于min</span></span><br><span class="line">        min = lowcost[j];   <span class="comment">//让当前权值成为最小值</span></span><br><span class="line">        k = j;   <span class="comment">//将当前最小值的下标存入k</span></span><br><span class="line">      &#125;</span><br><span class="line">      j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;(%d,%d)%d\n&quot;</span>,adjvex[k],k,lowcost[k]);  <span class="comment">//打印当前顶点边中权值最小边</span></span><br><span class="line">    lowcost[k] = <span class="number">0</span>;   <span class="comment">//将当前顶点的权值设置为0，表示此顶点已经完成任务</span></span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;G-&gt;vexNum;j++)&#123;  <span class="comment">//循环所有顶点</span></span><br><span class="line">      <span class="keyword">if</span>(lowcost[j] != <span class="number">0</span> &amp;&amp; G-&gt;Edge[k][j] &lt; lowcost[j])&#123; <span class="comment">//若下标为k顶点各边权值小于此前这些顶点未被加入生成树权值</span></span><br><span class="line">        lowcost[j] = G-&gt;Edge[k][j];    <span class="comment">//将较小权值存入lowcost</span></span><br><span class="line">        adjvex[j] = k; <span class="comment">//将下标为k的顶点存入adjvex</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">createGraph</span><span class="params">(MGraph* G)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> i,j,w;</span><br><span class="line">  cout &lt;&lt; <span class="string">&quot;请输入&quot;</span> &lt;&lt; G-&gt;vexNum &lt;&lt; <span class="string">&quot;个结点（字符）:&quot;</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vexNum; ++i) &#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;Vex[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vexNum; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vexNum; ++j) &#123;</span><br><span class="line">      G-&gt;Edge[i][j] = INF;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edgeNum; ++k) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;请输入边（vi,vj）上的下标i，下标j和权w:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; i &gt;&gt; j &gt;&gt; w;</span><br><span class="line">    G-&gt;Edge[i][j] = w;</span><br><span class="line">    G-&gt;Edge[j][i] = G-&gt;Edge[i][j];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> vexNum,edgeNum;</span><br><span class="line">  cout &lt;&lt; <span class="string">&quot;请输入结点数vexNum和边数edgeNum:&quot;</span> &lt;&lt; endl;</span><br><span class="line">  cout &lt;&lt;  <span class="string">&quot;结点数vexNum:&quot;</span>;</span><br><span class="line">  cin &gt;&gt; vexNum;</span><br><span class="line">  cout &lt;&lt;  <span class="string">&quot;边数edgeNum:&quot;</span>;</span><br><span class="line">  cin &gt;&gt; edgeNum;</span><br><span class="line">  <span class="function">MGraph <span class="title">mGraph</span><span class="params">(vexNum,edgeNum)</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">createGraph</span>(&amp;mGraph);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">MiniSpanTree_Prim</span>(&amp;mGraph);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://littleforest6.github.io">Forest</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://littleforest6.github.io/2023/06/03/%E7%AE%97%E6%B3%95/Prim%E7%AE%97%E6%B3%95/">http://littleforest6.github.io/2023/06/03/%E7%AE%97%E6%B3%95/Prim%E7%AE%97%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://littleforest6.github.io" target="_blank">Forest's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><div class="post_share"><div class="social-share" data-image="https://pic1.zhimg.com/80/v2-99991e0f48165e901f6fe844087de568_720w.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/07/04/JAVA/Java%E9%9B%86%E5%90%88%E2%80%94%E2%80%94HashMap/" title="Java集合——HashMap"><img class="cover" src="https://www.runoob.com/wp-content/uploads/2020/07/WV9wXLl.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Java集合——HashMap</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/headpicture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Forest</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/littleforest6"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/littleforest6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1193497806@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/luckForest" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #87cefa;"></i></a><a class="social-icon" href="https://space.bilibili.com/516132720" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #ffb6c1;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! I will record what I learn in my blog. Whether you are a computer technology related person or just a visitor passing by occasionally, I hope you can find valuable information and inspiration here.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Prim算法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/01/08/C++/C++%E9%9D%A2%E8%AF%95%E9%A2%98/" title="C++面试题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++面试题"/></a><div class="content"><a class="title" href="/2025/01/08/C++/C++%E9%9D%A2%E8%AF%95%E9%A2%98/" title="C++面试题">C++面试题</a><time datetime="2025-01-08T09:34:02.000Z" title="发表于 2025-01-08 17:34:02">2025-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/30/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学数字图像视频处理期末复习"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="南京邮电大学数字图像视频处理期末复习"/></a><div class="content"><a class="title" href="/2024/06/30/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学数字图像视频处理期末复习">南京邮电大学数字图像视频处理期末复习</a><time datetime="2024-06-29T16:01:03.000Z" title="发表于 2024-06-30 00:01:03">2024-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学数据挖掘期末复习"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="南京邮电大学数据挖掘期末复习"/></a><div class="content"><a class="title" href="/2024/06/25/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学数据挖掘期末复习">南京邮电大学数据挖掘期末复习</a><time datetime="2024-06-25T05:20:52.000Z" title="发表于 2024-06-25 13:20:52">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/22/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学软件工程期末复习"><img src="https://pic1.zhimg.com/80/v2-abdae3ea8ab3c944982ace2d9b32ae10_720w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="南京邮电大学软件工程期末复习"/></a><div class="content"><a class="title" href="/2024/06/22/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/%E5%8D%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="南京邮电大学软件工程期末复习">南京邮电大学软件工程期末复习</a><time datetime="2024-06-21T17:52:22.000Z" title="发表于 2024-06-22 01:52:22">2024-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/13/OpenGL/SOIL2%E5%9C%A8vs2022%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/" title="SOIL2在vs2022中的配置"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SOIL2在vs2022中的配置"/></a><div class="content"><a class="title" href="/2023/12/13/OpenGL/SOIL2%E5%9C%A8vs2022%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/" title="SOIL2在vs2022中的配置">SOIL2在vs2022中的配置</a><time datetime="2023-12-13T15:57:07.000Z" title="发表于 2023-12-13 23:57:07">2023-12-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Forest</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
